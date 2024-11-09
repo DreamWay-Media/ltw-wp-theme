@@ -1,0 +1,13 @@
+@font-face {
+  font-family: Irvin-Heading;
+  src: url("../fonts/Irvin-Heading.otf");
+  src: url("../fonts/Irvin-Heading.otf?#iefix") format("opentype"),
+    url("../fonts/Irvin-Heading.woff") format("woff"),
+    url("../fonts/Irvin-Heading.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: Irvin-Heading, "Libre Caslon Text";
+}
