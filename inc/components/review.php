@@ -21,7 +21,7 @@ function review( $rating=5, $desc="We hired them, and the rest is history! Thank
     $result .= str_repeat("☆", 5 - $rounded);
 
     return '
-        <div class="my-0 mx-auto max-w-[40%] bg-white shadow-lg overflow-hidden flex flex-col h-full border-2 border-black p-4 ' . htmlspecialchars($custom_classes) . '">
+        <div class="my-0 mx-auto bg-white shadow-lg overflow-hidden flex flex-col h-full border-2 border-primary p-4 ' . htmlspecialchars($custom_classes) . '">
             <!-- Star Rating Section -->
             <div class="mb-2">
                 <span class="text-black-500 text-[32px]">' . $result . '</span>

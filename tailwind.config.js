@@ -15,6 +15,11 @@ module.exports = {
         "white-to-transparent":
           "linear-gradient(to right, rgba(255, 255, 255, 0.98) 75%, transparent 100%)",
       },
+      rotate: {
+        'y-90': 'rotateY(90deg)',
+        'y-180': 'rotateY(180deg)',
+        'y-360': 'rotateY(360deg)',
+      },
     },
     plugins: [],
   },

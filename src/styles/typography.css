@@ -1,7 +1,7 @@
 @font-face {
-  font-family: Irvin-Heading;
-  src: url("../fonts/Irvin-Heading.otf");
-  src: url("../fonts/Irvin-Heading.otf?#iefix") format("opentype"),
+  font-family: 'Irvin-Heading';
+  src: url("../fonts/Irvin-Heading.eot");
+  src: url("../fonts/Irvin-Heading.eot?#iefix") format("opentype"),
     url("../fonts/Irvin-Heading.woff") format("woff"),
     url("../fonts/Irvin-Heading.ttf") format("truetype");
   font-weight: normal;
@@ -11,3 +11,33 @@
 * {
   font-family: Irvin-Heading, "Libre Caslon Text";
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/icomoon.ttf") format("truetype"),
+      url("../fonts/icomoon.woff") format("woff"),
+      url("../fonts/icomoon.svg?#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.user{
+  font-family: 'icomoon';
+}
+.user::before{
+  content:'\e900';
+} 
+.arrow-right-thick {}
+.calender {}
+.phone {}
+.mail {}
+.calender-outline {}
+.arrow-right {}
+.phone-outline {}
+.messages {}
+.instagram {}
+.linkedin {}
+.x {}
+.youtube {}

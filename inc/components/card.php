@@ -13,14 +13,14 @@
 function card($src="https://via.placeholder.com/400x300", $alt="Image", $intro="Intro text", $title="Title", $desc="This is a small description that provides more details about the card's content and purpose, keeping it concise and informative.", $custom_classes="") {
     
     return '
-        <div class="w-80 h-[400px] border border-gray-300 bg-white shadow-lg rounded-lg '. htmlspecialchars($custom_classes) .'">
-            <div class="h-48 bg-gray-200 rounded-t-lg relative overflow-hidden">
+        <div class="w-full h-full bg-white'. htmlspecialchars($custom_classes) .'">
+            <div class="w-full min-h-[240px;] aspect-[4/3] bg-gray-200 relative object-cover overflow-hidden">
                 <img src="'.htmlspecialchars($src).'" alt="'.htmlspecialchars($alt).'" class="absolute inset-0 w-full h-full object-cover" role="img" />
             </div>
-            <div class="p-4">
-                <p class="text-gray-600 text-sm mb-1">'.htmlspecialchars($intro).'</p>
-                <h4 class="text-xl font-light text-gray-800 mb-2">'.htmlspecialchars($title).'</h4>
-                <p class="text-gray-700 text-sm">'.htmlspecialchars($desc).'</p>
+            <div class="p-1">
+                <p class="text-gray-600 mb-1 py-3">'.htmlspecialchars($intro).'</p>
+                <h5 class="font-light text-gray-800 mb-2">'.htmlspecialchars($title).'</h5>
+                <p class="text-gray-700">'.htmlspecialchars($desc).'</p>
             </div>
         </div>
     ';

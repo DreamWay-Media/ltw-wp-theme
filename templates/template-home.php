@@ -18,12 +18,12 @@ get_header();
                 $hero_alt = $hero_background['alt'];
             endif;
             ?>
-            <section class="hero w-full overflow-hidden relative">
+            <section class="hero w-full h-full relative">
                 <img class="w-full h-full object-contain" src="<?php echo esc_url($hero_url); ?>" />
-                <div class="hidden md:overlay md:pl-16 md:pr-[15%] md:gap-8 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-full md:bg-white-to-transparent md:flex md:flex-col md:justify-center">
-                    <h1 class="md:text-3xl lg:text-6xl"><?php echo esc_html($hero_main_message); ?></h1>
-                    <p class="md:text-base lg:text-xl"><?php echo esc_html($hero_sub_message); ?></p>
-                    <a href="/" class="ltw_btn ml-[unset]">Let's get Started. -></a>
+                <div class="hidden md:overlay md:pl-8 md:pr-[15%] md:gap-6 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-full md:bg-white-to-transparent md:flex md:flex-col md:justify-center">
+                    <h1><?php echo wp_kses_post($hero_main_message); ?></h1>
+                    <p><?php echo esc_html($hero_sub_message); ?></p>
+                    <a href="/" class="ltw-btn ml-0">Let's get Started. -></a>
                 </div>
             </section>
             <!-- Hero Section -->
