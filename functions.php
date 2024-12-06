@@ -82,26 +82,59 @@ class My_Custom_Widget extends WP_Widget {
     }
 }
 
-function my_custom_widgets_init() {
+function top_bar_widgets_init() {
+    // Register the Left Top Bar (row) widget area
     register_sidebar( array(
-        'name'          => __( 'Main Sidebar', 'your-text-domain' ),
-        'id'            => 'sidebar-1',
-        'description'   => __( 'Widgets in this area will be shown in the sidebar.', 'your-text-domain' ),
+        'name'          => __( 'Top Bar Left Row', 'DWM-Skeleton-Theme' ),
+        'id'            => 'top-bar-left',
+        'description'   => __( 'Widgets in this area will be shown on the left side of the top bar.', 'DWM-Skeleton-Theme' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // Register the Left Top Bar (column) widget area
+    register_sidebar( array(
+        'name'          => __( 'Top Bar Col', 'DWM-Skeleton-Theme' ),
+        'id'            => 'footer-top',
+        'description'   => __( 'Widgets in this area will be shown on the right side of the footer.', 'DWM-Skeleton-Theme' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // Register the Right Top Bar widget area
+    register_sidebar( array(
+        'name'          => __( 'Top Bar Right', 'DWM-Skeleton-Theme' ),
+        'id'            => 'top-bar-right',
+        'description'   => __( 'Widgets in this area will be shown on the right side of the top bar, and in the footer.', 'DWM-Skeleton-Theme' ),
         'before_widget' => '<div class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
 }
-add_action( 'widgets_init', 'my_custom_widgets_init' );
+add_action( 'widgets_init', 'top_bar_widgets_init' );
+
+// Enable block editor for widgets
+add_filter( 'use_widgets_block_editor', '__return_true' );
 
 
 
-// Enqueue styles and scripts
+
 function skeleton_enqueue_assets() {
-    // tailwind CSS
+    // Enqueue Tailwind CSS (already in your setup)
     wp_enqueue_style('tailwindcss', get_template_directory_uri() . '/dist/main.css', array(), null);
-    // theme's main stylesheet
-    wp_enqueue_style('my-theme-style', get_stylesheet_uri(), array('tailwindcss'), null);
+
+    // Enqueue Swiper CSS 
+    wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), null);
+
+    // Enqueue theme's main stylesheet 
+    wp_enqueue_style('my-theme-style', get_stylesheet_uri(), array('tailwindcss', 'swiper-css'), null);
+
+    // Enqueue Swiper JS 
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'skeleton_enqueue_assets');

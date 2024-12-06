@@ -1,31 +1,14 @@
 <!-- Contact Form -->
-<div class="px-16 bg-gray-200 h-[700px] flex justify-center items-center">
+<?php
+        $image_id = 124;
+        $image_url = wp_get_attachment_url($image_id);
+        ?>
+<div id="contact-us-form" class="sm:px-16 bg-secondary min-h-[500px] flex flex-col justify-start items-center bg-no-repeat bg-right-bottom" style="background-image:url(<?php echo esc_url($image_url); ?>);">
     <section class="w-full max-w-4xl">
-        <div class="flex flex-col justify-center items-center">
-            <h2 class="mx-auto mb-6">Title</h2>
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full">
-                <div>
-                    <input type="text" id="name" placeholder="Full Name" class="h-14 bg-white shadow-lg border p-2 rounded-md w-full" required />
-                </div>
-                <div>
-                    <input type="email" id="email" placeholder="Email Address" class="h-14 bg-white shadow-lg border p-2 rounded-md w-full" required />
-                </div>
-
-                <div>
-                    <input type="tel" id="phone" placeholder="Phone No" class="h-14 bg-white shadow-lg border p-2 rounded-md w-full" required />
-                </div>
-                <div>
-                    <input type="date" id="date" placeholder="mm/dd/yyyy" class="h-14 bg-white shadow-lg border p-2 rounded-md w-full" required />
-                </div>
-
-                <div class="md:col-span-2">
-                    <textarea id="message" rows="4" placeholder="Message" class="h-14 bg-white shadow-lg border p-2 rounded-md w-full max-h-[200px]" required></textarea>
-                </div>
-
-                <div class="md:col-span-2">
-                    <button type="submit" class="ltw-btn mx-auto mt-4">Submit</button>
-                </div>
-            </form>
+        <h2 class="mx-auto text-center my-8">Get a Schedule</h2>
+        <!-- Embed Contact Form -->
+        <div>
+            <?php echo do_shortcode('[contact-form-7 id="2526bbf" title="Contact Us" html_id="contact-us-form" html_class="contact-us-form"]'); ?>
         </div>
     </section>
 </div>
@@ -87,11 +70,18 @@
             <h6>Contact Info</h6>
             <div class="footer-top-bar grid grid-cols-1 gap-4">
                 <div class="text-center place-self-center sm:text-start sm:place-self-auto sm:justify-items-start">
-                    <p>INSERT PHONE NUMBER HERE</p>
-                    <p>INSERT EMAIL ADDRESS HERE</p>
+                    <?php if (is_active_sidebar('footer-top')) : ?>
+                        <aside>
+                            <?php dynamic_sidebar('footer-top'); ?>
+                        </aside>
+                    <?php endif; ?>
                 </div>
                 <div class="text-center place-self-center sm:text-start sm:place-self-auto sm:justify-items-start">
-                    <p>TWITTER FACEBOOK LINKEDIN INSTAGRAM</p>
+                    <?php if (is_active_sidebar('top-bar-right')) : ?>
+                        <aside>
+                            <?php dynamic_sidebar('top-bar-right'); ?>
+                        </aside>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -108,6 +98,50 @@
     </div>
     <?php wp_footer(); ?>
 </footer>
+
+<script>
+    var swiper = new Swiper('.testimonial-swiper-container', {
+        slidesPerView: 1, // How many slides to show at once
+        spaceBetween: 5000, // Space between slides
+        navigation: {
+            nextEl: '.testimonial-swiper-button-next', // Next button
+            prevEl: '.testimonial-swiper-button-prev', // Previous button
+        },
+        pagination: {
+            el: '.testimonial-swiper-pagination', // Pagination dots
+            clickable: true, // Make dots clickable
+        },
+        loop: true, // Loop back to the first slide after the last
+        autoplay: {
+            delay: 12000, // Autoplay every 12 seconds
+        },
+    });
+
+    var swiper = new Swiper('.client-swiper-container', {
+        slidesPerView: 2,
+        spaceBetween: 4,
+        navigation: {
+            nextEl: '.client-swiper-button-next',
+            prevEl: '.client-swiper-button-prev',
+        },
+        pagination: {
+            el: '.client-swiper-pagination',
+            clickable: true,
+        },
+        loop: true,
+        autoplay: {
+            delay: 6000,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 4,
+            },
+        },
+    });
+</script>
 </body>
 
 </html>

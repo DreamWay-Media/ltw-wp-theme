@@ -1,0 +1,33 @@
+.contact-us-form {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full place-items-center;
+}
+
+/* allows css to function on form elements */
+.contact-us-form p {
+    display: inherit;
+    width: 100%;
+}
+
+/* Targets the message and submit sections */
+.contact-us-form p:nth-child(6), .contact-us-form p:nth-child(7) {
+    @apply col-span-1 md:col-span-2;
+}
+
+.form-icons {
+    font-family: 'icomoon';
+}
+
+/* css for placeholder */
+.form-placeholder {
+    @apply placeholder:text-primary placeholder:text-[14px] sm:placeholder:text-[16px];
+}
+
+/* css for form inputs */
+.form-input-reg {
+    @apply h-14 bg-white shadow-lg border p-2 rounded-md w-full;
+}
+
+/* css that targets message section */
+.message-section {
+    @apply min-h-14 max-h-52;
+}

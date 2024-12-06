@@ -7,9 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'primary': "Irvin-Heading", 
+        'secondary': "Libre Caslon Text",
+      },
       colors: {
-        primary: "#444444", // custom primary color
-        secondary: "#fbbf24", // custom secondary color
+        'primary': "#444444",
+        'secondary': "#F2F2F2",
+        'tertiary': "#fbbf24",
       },
       backgroundImage: {
         "white-to-transparent":

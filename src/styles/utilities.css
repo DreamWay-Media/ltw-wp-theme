@@ -1,3 +1,499 @@
 @tailwind utilities;
 
 
+
+.user,
+.arrow-right-thick,
+.calender,
+.phone,
+.mail,
+.calender-outline,
+.arrow-right,
+.phone-outline,
+.messages,
+.instagram,
+.linkedin,
+.x,
+.youtube,
+.arrow-right-circle,
+.arrow-left-circle,
+.city-of-hope,
+.tx-one,
+.docusign,
+.macy {
+    font-family: 'icomoon';
+    font-size: 28px;
+}
+
+.user::before {
+    content: '\e900';
+}
+
+.arrow-right-thick::before {
+    content: '\e901';
+}
+
+.calender::before {
+    content: '\e902';
+}
+
+.phone::before {
+    content: '\e903';
+}
+
+.mail::before {
+    content: '\e904';
+}
+
+.calender-outline::before {
+    content: '\e905';
+}
+
+.arrow-right::before {
+    content: '\e906';
+}
+
+.phone-outline::before {
+    content: '\e907';
+}
+
+.messages::before {
+    content: '\e908';
+}
+
+.instagram::before {
+    content: '\e909';
+    transition: all 0.3s linear;
+}
+
+.instagram:hover::before {
+    color: #e4405f;
+}
+
+.linkedin::before {
+    content: '\e90a';
+    transition: all 0.3s linear;
+}
+
+.linkedin:hover::before {
+    color: #0077b5;
+}
+
+.x::before {
+    content: '\e90b';
+    transition: all 0.3s linear;
+}
+
+.x:hover::before {
+    color: #000000;
+}
+
+.youtube::before {
+    content: '\e90c';
+    transition: all 0.3s linear;
+}
+
+.youtube:hover::before {
+    color: #f00;
+}
+
+.arrow-right-circle::before {
+    content: '\e90d';
+}
+
+.arrow-left-circle::before {
+    content: '\e90e';
+}
+
+.city-of-hope .path1::before {
+    content: "\e90f";
+    color: #0072ce;
+}
+
+.city-of-hope .path2::before {
+    content: "\e910";
+    color: #fff;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path3::before {
+    content: "\e911";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path4::before {
+    content: "\e912";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path5::before {
+    content: "\e913";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path6::before {
+    content: "\e914";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path7::before {
+    content: "\e915";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path8::before {
+    content: "\e916";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path9::before {
+    content: "\e917";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path10::before {
+    content: "\e918";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path11::before {
+    content: "\e919";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path12::before {
+    content: "\e91a";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path13::before {
+    content: "\e91b";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path14::before {
+    content: "\e91c";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.city-of-hope .path15::before {
+    content: "\e91d";
+    color: #000;
+    margin-left: -6.037109375em;
+}
+
+.tx-one .path1::before {
+    content: "\e92d";
+    color: #000;
+}
+
+.tx-one .path2::before {
+    content: "\e92e";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path3::before {
+    content: "\e92f";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path4::before {
+    content: "\e930";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path5::before {
+    content: "\e931";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path6::before {
+    content: "\e932";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path7::before {
+    content: "\e933";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path8::before {
+    content: "\e934";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path9::before {
+    content: "\e935";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path10::before {
+    content: "\e936";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path11::before {
+    content: "\e937";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path12::before {
+    content: "\e938";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path13::before {
+    content: "\e939";
+    color: #000;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path14::before {
+    content: "\e93a";
+    color: #d71920;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path15::before {
+    content: "\e93b";
+    color: #d71920;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path16::before {
+    content: "\e93c";
+    color: #d71920;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path17::before {
+    content: "\e93d";
+    color: #d71920;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path18::before {
+    content: "\e93e";
+    color: #d71920;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path19::before {
+    content: "\e93f";
+    color: #d71920;
+    margin-left: -4.0556640625em;
+}
+
+.tx-one .path20::before {
+    content: "\e940";
+    color: #d71920;
+    margin-left: -4.0556640625em;
+}
+
+.docusign .path1::before {
+    content: "\e941";
+    color: #000;
+}
+
+.docusign .path2::before {
+    content: "\e942";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path3::before {
+    content: "\e943";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path4::before {
+    content: "\e944";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path5::before {
+    content: "\e945";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path6::before {
+    content: "\e946";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path7::before {
+    content: "\e947";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path8::before {
+    content: "\e948";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path9::before {
+    content: "\e949";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path10::before {
+    content: "\e94a";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path11::before {
+    content: "\e94b";
+    color: #4c00ff;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path12::before {
+    content: "\e94c";
+    color: #ff5252;
+    margin-left: -4.92578125em;
+}
+
+.docusign .path13::before {
+    content: "\e94d";
+    color: #000;
+    margin-left: -4.92578125em;
+}
+
+.macy .path1::before {
+    content: "\e94e";
+    color: #000;
+}
+
+.macy .path2::before {
+    content: "\e94f";
+    color: #e11a2b;
+    margin-left: -3.4814453125em;
+}
+
+/* SwiperJS  */
+.testimonial-swiper-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#testimonial-swiper-wrapper {
+    flex-grow: 1;
+    display: flex;
+}
+
+#testimonial-swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+#testimonial-left-button,
+#testimonial-right-button {
+    position: unset;
+    top: unset;
+    width: unset;
+    height: unset;
+    margin-top: unset;
+    z-index: unset;
+    cursor: unset;
+    display: unset;
+    align-items: unset;
+    justify-content: unset;
+    color: unset;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 52px;
+}
+
+#testimonial-left-button:after,
+#testimonial-right-button:after {
+    font-family: unset;
+    font-size: unset;
+    text-transform: unset !important;
+    letter-spacing: unset;
+    font-variant: unset;
+    line-height: unset;
+}
+
+div .swiper-button-next:after,
+div .swiper-rtl .swiper-button-prev:after,
+div .swiper-button-prev:after,
+div .swiper-rtl .swiper-button-next:after {
+    content: none;
+}
+
+
+.client-swiper-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#client-swiper-wrapper {
+    flex-grow: 1;
+    display: flex;
+}
+
+#client-swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+#client-left-button,
+#client-right-button {
+    position: unset;
+    top: unset;
+    width: unset;
+    height: unset;
+    margin-top: unset;
+    z-index: unset;
+    cursor: unset;
+    display: unset;
+    align-items: unset;
+    justify-content: unset;
+    color: unset;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 52px;
+}
+
+#client-left-button:after,
+#client-right-button:after {
+    font-family: unset;
+    font-size: unset;
+    text-transform: unset !important;
+    letter-spacing: unset;
+    font-variant: unset;
+    line-height: unset;
+}

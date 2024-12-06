@@ -32,22 +32,19 @@
     <?php wp_body_open(); ?>
     <!-- header -->
     <header>
-        <span class="icomoon user text-black"></span>
         <?php get_template_part('inc/components/button'); ?>
         <!-- Top Bar -->
-        <?php if (is_active_sidebar('sidebar-1')) : ?>
-            <aside id="secondary" class="widget-area bg-primary">
-                <?php dynamic_sidebar('sidebar-1'); ?>
-            </aside>
-        <?php endif; ?>
-        <div class="py-4 px-16 bg-primary flex justify-between text-white">
-            <div class="flex gap-4 justify-between sm:justify-start">
-                <p>INSERT PHONE NUMBER HERE</p>
-                <p>INSERT EMAIL ADDRESS HERE</p>
-            </div>
-            <div class="hidden sm:block">
-                <p>TWITTER FACEBOOK LINKEDIN INSTAGRAM</p>
-            </div>
+        <div class="px-2 py-4 md:px-16 bg-primary sm:flex sm:justify-around text-white">
+            <?php if (is_active_sidebar('top-bar-left')) : ?>
+                <aside>
+                    <?php dynamic_sidebar('top-bar-left'); ?>
+                </aside>
+            <?php endif; ?>
+            <?php if (is_active_sidebar('top-bar-right')) : ?>
+                <aside class="hidden sm:block">
+                    <?php dynamic_sidebar('top-bar-right'); ?>
+                </aside>
+            <?php endif; ?>
         </div>
         <!-- Top Bar -->
         <!-- Header -->
@@ -104,60 +101,13 @@
                 </div>
             </div>
 
-            <style>
-                #nav-menu {
-                    display: none;
-                    color: white;
-                    top: 100px;
-                    font-size: 34px;
-                    transition: all 1s linear;
-                }
-
-                #hamburger-toggle:checked+label+.overlay #nav-menu {
-                    display: block;
-                }
-
-                .hamburger-line {
-                    transition: all 0.3s ease-in-out;
-                    position: relative;
-                    z-index: 11;
-                }
-
-                #hamburger-toggle:checked+label .hamburger-line:nth-child(1) {
-                    transform: rotate(45deg) translate(6px, 6px);
-                    background-color: #FFF;
-                }
-
-                #hamburger-toggle:checked+label .hamburger-line:nth-child(2) {
-                    opacity: 0;
-                }
-
-                #hamburger-toggle:checked+label .hamburger-line:nth-child(3) {
-                    transform: rotate(-45deg) translate(6px, -6px);
-                    background-color: #FFF;
-                }
-
-                .overlay {
-                    position: fixed;
-                    overflow: scroll;
-                    scrollbar-width: none;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 150vw;
-                    z-index: 10;
-                    transition: all 0.6s ease-out;
-                }
-
-                #hamburger-toggle:checked+label+.overlay {
-                    left: 0px;
-                }
-            </style>
-
-
             <div class="row-start-1 col-start-1 md:col-start-6 col-span-1">
-                <a class="ltw-btn" href="/">Contact Us</a>
+                <a class="ltw-btn" href="#contact-us-form">
+                    <p class="hidden md:flex md:justify-center md:items-center">Contact Us<span class="arrow-right"></span></p>
+                    <span class="inline md:hidden"><span class="phone"></span></span>
+                </a>
             </div>
+
             <!-- navigation -->
         </div>
         <!-- Header -->

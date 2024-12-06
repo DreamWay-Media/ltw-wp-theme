@@ -28,14 +28,14 @@ function review( $rating=5, $desc="We hired them, and the rest is history! Thank
             </div>
             <!-- Testimonial Section -->
             <div class="flex-grow"> 
-                <p class="text-gray-700">' . htmlspecialchars($desc) . '</p>
+                <p>' . htmlspecialchars($desc) . '</p>
             </div>
             <!-- Client Info Section -->
             <div class="flex items-center mt-4"> 
                 <img class="w-12 h-12 rounded-full mr-4" src="'. htmlspecialchars($src) .'" alt="' . htmlspecialchars($alt) . '" role="img">
                 <div>
                     <p class="font-semibold">'. htmlspecialchars($name) .'</p>
-                    <p class="text-gray-500 font-normal">'. htmlspecialchars($title) .'</p>
+                    <p>'. htmlspecialchars($title) .'</p>
                 </div>
             </div>
         </div>
