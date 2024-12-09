@@ -1,11 +1,11 @@
 @tailwind components;
 
 .ltw-btn {
-  @apply flex pl-4 pr-4 pt-2 pb-2 w-max h-max transition duration-300 rounded-full bg-primary text-white whitespace-nowrap hover:bg-[#686868] active:bg-[#787878];
+  @apply flex md:pl-2 md:pr-2 md:pt-1 md:pb-1 lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2 w-max h-max transition duration-300 rounded-full bg-primary text-white whitespace-nowrap hover:bg-[#686868] active:bg-[#787878];
 }
 
 .ltw-btn-light {
-  @apply flex pl-4 pr-4 pt-2 pb-2 w-max h-max transition duration-300 rounded-full bg-secondary text-neutral-900 whitespace-nowrap hover:bg-gray-200 active:bg-gray-300;
+  @apply flex md:pl-2 md:pr-2 md:pt-1 md:pb-1 lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2 w-max h-max transition duration-300 rounded-full bg-secondary text-neutral-900 whitespace-nowrap hover:bg-gray-200 active:bg-gray-300;
 
 }
 

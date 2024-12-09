@@ -6,7 +6,7 @@ get_header(); ?>
 
 
 <div class="bg-primary min-h-[150px] w-full flex justify-center items-center text-white text-center">
-    <h1 class="font-bold text-white">Portfolio</h1>
+    <h1 class="font-bold text-white"><?php echo get_the_title() ?></h1>
 </div>
 <main class="container mx-auto pb-8 px-8 md:px-16">
     <?php
@@ -45,19 +45,17 @@ get_header(); ?>
         $project_title = get_field('project_title');
         $project_subtitle = get_field('project_subtitle');
         $project_description = get_field('project_description');
-        if (has_post_thumbnail()) {
-            $thumbnail_id = get_post_thumbnail_id(get_the_ID());
-            $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $image_url = wp_get_attachment_image_url($thumbnail_id, 'medium');
-        } else {
-            $thumbnail_id = null;
-            $alt_text = "Image";
-            $image_url = "https://via.placeholder.com/400x300";
-        }
         ?>
         <div>
             <?php
-                echo card($image_url, $alt_text, get_the_permalink(), $project_subtitle, $project_title, $project_description, "");
+                echo card(
+                    get_the_ID(),
+                    get_the_permalink(),
+                    $project_subtitle,
+                    $project_title,
+                    $project_description,
+                    ""
+                );
             ?>
         </div>
         <?php 

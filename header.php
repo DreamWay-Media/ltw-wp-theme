@@ -102,7 +102,7 @@
             </div>
 
             <div class="row-start-1 col-start-1 md:col-start-6 col-span-1">
-                <a class="ltw-btn" href="#contact-us-form">
+                <a class="ltw-btn pl-4 pr-4 pt-2 pb-2" href="#contact-us-form">
                     <p class="hidden md:flex md:justify-center md:items-center">Contact Us<span class="arrow-right"></span></p>
                     <span class="inline md:hidden"><span class="phone"></span></span>
                 </a>

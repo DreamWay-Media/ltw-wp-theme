@@ -17,13 +17,14 @@ get_header();
                 $hero_url = $hero_background['url'];
                 $hero_alt = $hero_background['alt'];
             endif;
+            $hero_cta_button = get_field('hero_cta_button');
             ?>
             <section class="hero w-full h-full relative">
                 <img class="w-full h-full object-contain" src="<?php echo esc_url($hero_url); ?>" />
-                <div class="hidden md:overlay md:pl-8 md:pr-[15%] md:gap-6 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-full md:bg-white-to-transparent md:flex md:flex-col md:justify-center">
+                <div class="hidden md:overlay md:pl-8 md:pr-[12%] md:gap-4 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-full md:bg-white-to-transparent md:flex md:flex-col md:justify-center lg:gap-6">
                     <h1><?php echo wp_kses_post($hero_main_message); ?></h1>
                     <p><?php echo esc_html($hero_sub_message); ?></p>
-                    <a href="#contact-us-form" class="ltw-btn ml-0 place-items-center">Let's get Started<span class="arrow-right"></span></a>
+                    <a href="#contact-us-form" class="ltw-btn ml-0 place-items-center"><?php echo esc_html($hero_cta_button); ?><span class="arrow-right"></span></a>
                 </div>
             </section>
         <?php endwhile; ?>
@@ -36,7 +37,8 @@ get_header();
     <!-- Main Content Section -->
     <!-- Testimonials Section -->
 <section class="overflow-x-hidden">
-    <?php 
+    <?php
+    $testimonials_heading = get_field('testimonials_heading');
     function get_star_rating($rating) {
     $stars = str_repeat("★", $rating);
     $stars .= str_repeat("☆", 5 - $rating);
@@ -53,7 +55,7 @@ get_header();
     if ($query->have_posts()) :
     ?>
     <div class="flex flex-col bg-primary text-white">
-        <h2 class="my-8 self-center">Testimonials</h2>
+        <h2 class="my-8 self-center"><?php echo esc_html($testimonials_heading); ?></h2>
         <div class="grid grid-cols-4 grid-rows-[auto_auto] lg:flex lg:flex-row lg:items-center lg:w-[85vw] my-0 mx-auto">
             <!-- Left button (Previous) -->
             <button id="testimonial-left-button" class="testimonial-swiper-button-prev arrow-left-circle row-start-2 row-span-1 col-start-2 col-span-1"></button>
@@ -100,9 +102,10 @@ get_header();
             <!-- Right button (Next) -->
             <button id="testimonial-right-button"class="testimonial-swiper-button-next arrow-right-circle row-start-2 row-span-1 col-start-3 col-span-1"></button>
         </div>
-        <a href="/testimonials" class="self-center ltw-btn-light justify-center items-center my-8">See all our Testimonials <span class="arrow-right"></span></a>
+        <?php $testimonials_cta_button = get_field('testimonials_cta_button'); ?>
+        <a href="/testimonials" class="self-center ltw-btn-light justify-center items-center my-8"><?php echo esc_html($testimonials_cta_button); ?><span class="arrow-right"></span></a>
     </div>
-    <?php    
+    <?php
     else :
         echo 'No testimonials to display.';
     endif;
@@ -112,7 +115,8 @@ get_header();
 <!-- Clients Section -->
 <section class="overflow-x-hidden">
     <div class="flex flex-col">
-        <h2 class="my-8 self-center">Our Clients</h2>
+        <?php $our_clients_heading = get_field('our_clients_heading'); ?>
+        <h2 class="my-8 self-center"><?php echo esc_html($our_clients_heading); ?></h2>
         <div class="grid grid-cols-4 grid-rows-[auto_auto] lg:flex lg:flex-row lg:items-center lg:w-[85vw] my-0 mx-auto">
             <!-- Left button (Previous) -->
             <button id="client-left-button" class="client-swiper-button-prev arrow-left-circle row-start-2 row-span-1 col-start-2 col-span-1"></button>
