@@ -47,7 +47,7 @@
 
                     <!-- Post Navigation -->
                     <div class="flex flex-col justify-center items-center">
-                        <h5>Other Blogs</h5>
+                        <h5>Keep Reading</h5>
                         <nav class="post-navigation my-8 flex justify-around items-center w-full">
                             <div class="prev-post">
                                 <?php previous_post_link('<span class="text-2xl text-primary transition duration-300 hover:text-tertiary">&larr; %link</span>'); ?>
