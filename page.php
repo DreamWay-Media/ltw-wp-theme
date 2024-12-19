@@ -5,7 +5,7 @@
     <main class="w-full md:w-2/3 p-4">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <article class="page-content mb-8">
-                <h1 class="text-3xl font-bold mb-4"><?php the_title(); ?></h1>
+                <h1 class="mb-4"><?php the_title(); ?></h1>
                 <div class="content">
                     <?php the_content(); ?>
                 </div>

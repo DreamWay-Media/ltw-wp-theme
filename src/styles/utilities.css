@@ -66,36 +66,24 @@
     transition: all 0.3s linear;
 }
 
-.instagram:hover::before {
-    color: #e4405f;
-}
 
 .linkedin::before {
     content: '\e90a';
     transition: all 0.3s linear;
 }
 
-.linkedin:hover::before {
-    color: #0077b5;
-}
 
 .x::before {
     content: '\e90b';
     transition: all 0.3s linear;
 }
 
-.x:hover::before {
-    color: #000000;
-}
 
 .youtube::before {
     content: '\e90c';
     transition: all 0.3s linear;
 }
 
-.youtube:hover::before {
-    color: #f00;
-}
 
 .arrow-right-circle::before {
     content: '\e90d';

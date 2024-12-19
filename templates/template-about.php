@@ -8,8 +8,10 @@ get_header(); ?>
     <h1 class="font-bold text-white"><?php echo get_the_title() ?></h1>
 </div>
 
-<main class="container mx-auto py-8">
-    <?php the_content(); ?>
+<main class="wrap mx-auto py-8">
+    <div class="content">
+        <?php the_content(); ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>

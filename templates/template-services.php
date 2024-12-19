@@ -8,9 +8,12 @@ get_header(); ?>
     <h1 class="font-bold text-white"><?php echo get_the_title() ?></h1>
 </div>
 
-<main class="container mx-auto py-8">
-
-    <?php the_content(); ?>
+<main>
+    <div class="wrap">
+        <div class="w-full px-[3.5%] lg:px-[10%]">
+            <?php the_content(); ?>
+        </div>
+    </div>
 </main>
 
 <?php get_footer(); ?>

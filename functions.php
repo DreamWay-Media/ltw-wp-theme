@@ -96,7 +96,7 @@ function top_bar_widgets_init() {
 
     // Register the Left Top Bar (column) widget area
     register_sidebar( array(
-        'name'          => __( 'Top Bar Col', 'DWM-Skeleton-Theme' ),
+        'name'          => __( 'Footer Top', 'DWM-Skeleton-Theme' ),
         'id'            => 'footer-top',
         'description'   => __( 'Widgets in this area will be shown on the right side of the footer.', 'DWM-Skeleton-Theme' ),
         'before_widget' => '<div class="widget %2$s">',

@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'primary': "Irvin-Heading", 
+        'primary': "Irvin-Heading",
         'secondary': "Libre Caslon Text",
       },
       colors: {
@@ -18,12 +18,7 @@ module.exports = {
       },
       backgroundImage: {
         "white-to-transparent":
-          "linear-gradient(to right, rgba(255, 255, 255, 0.98) 75%, transparent 100%)",
-      },
-      rotate: {
-        'y-90': 'rotateY(90deg)',
-        'y-180': 'rotateY(180deg)',
-        'y-360': 'rotateY(360deg)',
+          "linear-gradient(to right, rgba(255, 255, 255, 0.98) 45%, transparent 55%)",
       },
     },
     plugins: [],

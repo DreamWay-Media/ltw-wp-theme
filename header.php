@@ -34,81 +34,85 @@
     <header>
         <?php get_template_part('inc/components/button'); ?>
         <!-- Top Bar -->
-        <div class="px-2 py-4 md:px-16 bg-primary sm:flex sm:justify-around text-white">
-            <?php if (is_active_sidebar('top-bar-left')) : ?>
-                <aside>
-                    <?php dynamic_sidebar('top-bar-left'); ?>
-                </aside>
-            <?php endif; ?>
-            <?php if (is_active_sidebar('top-bar-right')) : ?>
-                <aside class="hidden sm:block">
-                    <?php dynamic_sidebar('top-bar-right'); ?>
-                </aside>
-            <?php endif; ?>
+        <div class="wrap bg-primary text-white">
+            <div class="content break-all">
+                <?php if (is_active_sidebar('top-bar-left')) : ?>
+                    <aside class="w-full sm:w-fit">
+                        <?php dynamic_sidebar('top-bar-left'); ?>
+                    </aside>
+                <?php endif; ?>
+                <?php if (is_active_sidebar('top-bar-right')) : ?>
+                    <aside class="hidden sm:block">
+                        <?php dynamic_sidebar('top-bar-right'); ?>
+                    </aside>
+                <?php endif; ?>
+            </div>
         </div>
         <!-- Top Bar -->
         <!-- Header -->
-        <div class="py-8 px-2 md:py-8 md:px-16 grid grid-cols-3 md:grid-cols-6 gap-4 place-items-center">
-            <!-- logo -->
-            <div class="site-logo col-start-2 col-span-1 md:col-start-1 md:col-span-1">
-                <?php if (has_custom_logo()) : ?>
-                    <?php the_custom_logo(); ?>
-                <?php else : ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="font-bold sm:col-start-2 lg:col-start-1 col-span-1">
-                        <?php bloginfo('name'); ?>
-                    </a>
-                <?php endif; ?>
-            </div>
-            <!-- logo -->
-            <!-- navigation -->
-            <nav class="site-navigation md:col-span-4 md:w-full">
-                <?php
-                // Check if there is a primary menu assigned
-                if (has_nav_menu('primary')) {
-                    // Desktop Menu
-                    echo '<div class="hidden md:inline px-16">';
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'menu_class' => 'md:flex md:flex-row justify-around'
-                    ));
-                    echo '</div>';
-                } else {
-                    // Fallback Menu for Desktop
-                    echo '<div class="hidden md:flex justify-around px-16">';
-                    echo '<ul class="flex space-x-4">';
-                    echo '<li><a href="#">Home</a></li>';
-                    echo '<li><a href="#">About</a></li>';
-                    echo '</ul>';
-                    echo '</div>';
-                }
-                ?>
-            </nav>
-            <div class="relative md:hidden col-start-3 col-span-1 row-start-1">
-                <input type="checkbox" id="hamburger-toggle" class="hidden" />
-                <label for="hamburger-toggle" class="flex flex-col items-center cursor-pointer p-2">
-                    <div class="hamburger-line w-8 h-1 bg-primary mb-1 transition-transform duration-300"></div>
-                    <div class="hamburger-line w-8 h-1 bg-primary mb-1 transition-opacity duration-300"></div>
-                    <div class="hamburger-line w-8 h-1 bg-primary transition-transform duration-300"></div>
-                </label>
-
-                <div class="bg-[rgba(68,68,68,0.95)] overlay">
-                    <!-- The navigation menu -->
-                    <nav id="nav-menu" class="absolute w-full left-0 top-full hidden transition-all duration-300">
-                        <ul class="flex flex-col p-4">
-                            <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-                        </ul>
+        <div class="wrap">
+            <div class="grid grid-cols-3 place-items-center xl:flex xl:content xl:h-[104px] py-5 w-full">
+                <!-- logo -->
+                <div class="row-start-1 col-start-2 col-span-1 site-logo">
+                    <?php if (has_custom_logo()) : ?>
+                        <?php the_custom_logo(); ?>
+                    <?php else : ?>
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="font-bold sm:col-start-2 lg:col-start-1 col-span-1">
+                            <?php bloginfo('name'); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+                <!-- logo -->
+                <div class="hidden xl:flex xl:items-center xl:h-[68px] flex-1">
+                    <!-- navigation -->
+                    <nav class="w-full">
+                        <?php
+                        // Check if there is a primary menu assigned
+                        if (has_nav_menu('primary')) {
+                            // Desktop Menu
+                            wp_nav_menu(array(
+                                'theme_location' => 'primary',
+                                'menu_class' => 'inline-flex items-start gap-14 w-full justify-evenly' // CSS for nav menu
+                            ));
+                        } else {
+                            // Fallback Menu for Desktop
+                            echo '<div class="hidden md:flex justify-around px-16">';
+                            echo '<ul class="flex space-x-4">';
+                            echo '<li><a href="#">Home</a></li>';
+                            echo '<li><a href="#">About</a></li>';
+                            echo '</ul>';
+                            echo '</div>';
+                        }
+                        ?>
                     </nav>
                 </div>
-            </div>
+                <div class="relative xl:hidden col-start-3 col-span-1 row-start-1">
+                    <input type="checkbox" id="hamburger-toggle" class="hidden" />
+                    <label for="hamburger-toggle" class="flex flex-col items-center cursor-pointer p-2">
+                        <div class="hamburger-line w-8 h-1 bg-primary mb-1 transition-transform duration-300"></div>
+                        <div class="hamburger-line w-8 h-1 bg-primary mb-1 transition-opacity duration-300"></div>
+                        <div class="hamburger-line w-8 h-1 bg-primary transition-transform duration-300"></div>
+                    </label>
 
-            <div class="row-start-1 col-start-1 md:col-start-6 col-span-1">
-                <a class="ltw-btn pl-4 pr-4 pt-2 pb-2" href="#contact-us-form">
-                    <p class="hidden md:flex md:justify-center md:items-center">Contact Us<span class="arrow-right"></span></p>
-                    <span class="inline md:hidden"><span class="mail"></span></span>
-                </a>
+                    <div class="bg-[rgba(68,68,68,0.95)] overlay">
+                        <nav id="nav-menu" class="absolute w-full left-0 top-full hidden transition-all duration-300">
+                            <ul class="flex flex-col p-4">
+                                <?php
+                                // Mobile Menu
+                                wp_nav_menu(array('theme_location' => 'primary'));
+                                ?>
+                            </ul>
+                        </nav>
+                        <!-- navigation -->
+                    </div>
+                </div>
+                <div class="row-start-1 col-start-1 col-span-1">
+                    <a class="ltw-btn pl-4 pr-4 pt-2 pb-2" href="#contact-us-form">
+                        <p class="hidden xl:flex xl:justify-center xl:items-center">Contact Us<span class="arrow-right"></span></p>
+                        <span class="inline lg:hidden"><span class="mail"></span></span>
+                    </a>
+                </div>
             </div>
-
-            <!-- navigation -->
         </div>
         <!-- Header -->
     </header>
