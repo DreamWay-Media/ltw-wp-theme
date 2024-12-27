@@ -28,7 +28,7 @@ get_header();
             $hero_cta_button = get_field('hero_cta_button');
             ?>
             <section class="wrap w-full h-full relative">
-                <img class="max-w-[1440px] shrink-0 xl:pl-24 " src="<?php echo esc_url($hero_url); ?>" />
+                <img class="w-full max-w-[1440px] shrink-0 xl:pl-24 " src="<?php echo esc_url($hero_url); ?>" />
                 <div class="hidden xl:wrap xl:absolute xl:left-0 xl:top-0 xl:min-w-full xl:min-h-full xl:max-w-[1440px] xl:bg-white-to-transparent">
                     <div class="content">
                         <div class="flex flex-col items-start gap-6 max-w-[534px]">
