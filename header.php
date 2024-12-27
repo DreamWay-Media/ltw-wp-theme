@@ -34,15 +34,15 @@
     <header>
         <?php get_template_part('inc/components/button'); ?>
         <!-- Top Bar -->
-        <div class="wrap bg-primary text-white">
-            <div class="content break-all">
+        <div class="wrap min-h-[40px] lg:min-h-[56px] bg-primary text-white">
+            <div class="content min-h-[32px] shrink-0 flex justify-between items-center">
                 <?php if (is_active_sidebar('top-bar-left')) : ?>
-                    <aside class="w-full sm:w-fit">
+                    <aside class="min-w-full md:min-w-[400px] lg:min-w-[517px] min-h-[29px] lg:shrink-0 break-all">
                         <?php dynamic_sidebar('top-bar-left'); ?>
                     </aside>
                 <?php endif; ?>
                 <?php if (is_active_sidebar('top-bar-right')) : ?>
-                    <aside class="hidden sm:block">
+                    <aside class="hidden md:flex lg:min-w-[176px] lg:h-[32px] lg:shrink-0 break-all">
                         <?php dynamic_sidebar('top-bar-right'); ?>
                     </aside>
                 <?php endif; ?>
@@ -50,8 +50,8 @@
         </div>
         <!-- Top Bar -->
         <!-- Header -->
-        <div class="wrap">
-            <div class="grid grid-cols-3 place-items-center xl:flex xl:content xl:h-[104px] py-5 w-full">
+        <div class="wrap py-18">
+            <div class="content h-[60px] mt-1 w-full grid grid-cols-[auto auto auto] justify-between place-items-center lg:mt-0 lg:py-5 lg:h-[104px] lg:flex lg:justify-center lg:items-center">
                 <!-- logo -->
                 <div class="row-start-1 col-start-2 col-span-1 site-logo">
                     <?php if (has_custom_logo()) : ?>
@@ -63,16 +63,16 @@
                     <?php endif; ?>
                 </div>
                 <!-- logo -->
-                <div class="hidden xl:flex xl:items-center xl:h-[68px] flex-1">
+                <div class="hidden lg:flex lg:items-center lg:h-[68px] flex-1">
                     <!-- navigation -->
-                    <nav class="w-full">
+                    <nav class="w-full flex justify-center items-center">
                         <?php
                         // Check if there is a primary menu assigned
                         if (has_nav_menu('primary')) {
                             // Desktop Menu
                             wp_nav_menu(array(
                                 'theme_location' => 'primary',
-                                'menu_class' => 'inline-flex items-start gap-14 w-full justify-evenly' // CSS for nav menu
+                                'menu_class' => 'inline-flex items-start gap-[52px]' // CSS for nav menu
                             ));
                         } else {
                             // Fallback Menu for Desktop
@@ -86,12 +86,14 @@
                         ?>
                     </nav>
                 </div>
-                <div class="relative xl:hidden col-start-3 col-span-1 row-start-1">
+                <div class="col-start-3 col-span-1 row-start-1 lg:hidden">
                     <input type="checkbox" id="hamburger-toggle" class="hidden" />
-                    <label for="hamburger-toggle" class="flex flex-col items-center cursor-pointer p-2">
-                        <div class="hamburger-line w-8 h-1 bg-primary mb-1 transition-transform duration-300"></div>
-                        <div class="hamburger-line w-8 h-1 bg-primary mb-1 transition-opacity duration-300"></div>
-                        <div class="hamburger-line w-8 h-1 bg-primary transition-transform duration-300"></div>
+                    <label for="hamburger-toggle" class="flex flex-col items-center cursor-pointer">
+                        <div class="ltw-btn-mobile z-20">
+                            <div class="hamburger-line w-[20px] h-1 rounded-[30px] bg-white mb-1 transition-transform duration-300"></div>
+                            <div class="hamburger-line w-[20px] h-1 rounded-[30px] bg-white mb-1 transition-opacity duration-300"></div>
+                            <div class="hamburger-line w-[20px] h-1 rounded-[30px] bg-white transition-transform duration-300"></div>
+                        </div>
                     </label>
 
                     <div class="bg-[rgba(68,68,68,0.95)] overlay">
@@ -107,9 +109,11 @@
                     </div>
                 </div>
                 <div class="row-start-1 col-start-1 col-span-1">
-                    <a class="ltw-btn pl-4 pr-4 pt-2 pb-2" href="#contact-us-form">
-                        <p class="hidden xl:flex xl:justify-center xl:items-center">Contact Us<span class="arrow-right"></span></p>
-                        <span class="inline lg:hidden"><span class="mail"></span></span>
+                    <a class="ltw-btn-mobile leading-[normal] lg:hidden" href="#contact-us-form">
+                        <span class="mail text-white w-[22px] h-[22px] text-[22px]"></span>
+                    </a>
+                    <a class="hidden lg:ltw-btn" href="#contact-us-form">
+                        <p class="flex justify-center items-center">Contact US<span class="arrow-right"></span></p>
                     </a>
                 </div>
             </div>

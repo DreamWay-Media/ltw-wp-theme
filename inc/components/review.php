@@ -11,7 +11,7 @@
  * @param string $custom_classes Additional custom classes to apply to the review (default is an empty string).
  * @return string The generated HTML for the review.
  */
-function review( $rating=5, $desc="We hired them, and the rest is history! Thank you!", $src="https://via.placeholder.com/48", $alt="Client Name", $name="Client Name", $title="CEO, Company Name", $custom_classes="") {
+function review( $rating=5, $desc="We hired Larry, and the rest is history! Thank you!", $src="https://via.placeholder.com/48", $alt="Client Name", $name="Client Name", $title="CEO, Company Name", $custom_classes="") {
     
     // Ensure the rating is an integer within the range [1-5]
     $rounded = max(1, min(5, round($rating)));
@@ -21,17 +21,17 @@ function review( $rating=5, $desc="We hired them, and the rest is history! Thank
     $result .= str_repeat("☆", 5 - $rounded);
 
     return '
-        <div class="my-0 mx-auto bg-white shadow-lg overflow-hidden flex flex-col h-full border-2 border-primary p-4 ' . htmlspecialchars($custom_classes) . '">
+        <div class="bg-white overflow-hidden flex flex-col justify-center items-stretch border border-primary gap-[24px] p-[32px] ' . htmlspecialchars($custom_classes) . '">
             <!-- Star Rating Section -->
-            <div class="mb-2">
+            <div>
                 <span class="text-black-500 text-[32px]">' . $result . '</span>
             </div>
             <!-- Testimonial Section -->
-            <div class="flex-grow"> 
+            <div class="text-[18px] leading-[28px] not-italic font-normal"> 
                 <p>' . htmlspecialchars($desc) . '</p>
             </div>
             <!-- Client Info Section -->
-            <div class="flex items-center mt-4"> 
+            <div class="flex items-center gap-4 "> 
                 <img class="w-12 h-12 rounded-full mr-4" src="'. htmlspecialchars($src) .'" alt="' . htmlspecialchars($alt) . '" role="img">
                 <div>
                     <p class="font-semibold">'. htmlspecialchars($name) .'</p>

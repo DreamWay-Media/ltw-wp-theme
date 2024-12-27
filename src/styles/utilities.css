@@ -22,8 +22,9 @@
 .docusign,
 .macy {
     font-family: 'icomoon';
-    font-size: 28px;
 }
+
+
 
 .user::before {
     content: '\e900';

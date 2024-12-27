@@ -85,7 +85,7 @@ class My_Custom_Widget extends WP_Widget {
 function top_bar_widgets_init() {
     // Register the Left Top Bar (row) widget area
     register_sidebar( array(
-        'name'          => __( 'Top Bar Left Row', 'DWM-Skeleton-Theme' ),
+        'name'          => __( 'Top Bar Left', 'DWM-Skeleton-Theme' ),
         'id'            => 'top-bar-left',
         'description'   => __( 'Widgets in this area will be shown on the left side of the top bar.', 'DWM-Skeleton-Theme' ),
         'before_widget' => '<div class="widget %2$s">',

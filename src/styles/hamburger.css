@@ -3,7 +3,7 @@
     #nav-menu {
         display: none;
         color: white;
-        top: 100px;
+        top: 200px;
         font-size: 34px;
         transition: all 1s linear;
     }
@@ -19,17 +19,16 @@
     }
     
     #hamburger-toggle:checked+label .hamburger-line:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-        background-color: #FFF;
+        transform: rotate(45deg) translate(5.5px, 6px);
     }
     
     #hamburger-toggle:checked+label .hamburger-line:nth-child(2) {
         opacity: 0;
+        background-color: transparent;
     }
     
     #hamburger-toggle:checked+label .hamburger-line:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
-        background-color: #FFF;
     }
     
     .overlay {

@@ -14,8 +14,16 @@ get_header();
             $hero_main_message = get_field('hero_main_message');
             $hero_sub_message = get_field('hero_sub_message');
             if ($hero_background):
-                $hero_url = $hero_background['url'];
-                $hero_alt = $hero_background['alt'];
+                if($hero_background['url']) {
+                    $hero_url = $hero_background['url'];
+                } else {
+                    $hero_url = 'Image';
+                }
+                if($hero_background['alt']) {
+                    $hero_alt = $hero_background['alt'];
+                } else {
+                    $hero_alt = 'Image';
+                }
             endif;
             $hero_cta_button = get_field('hero_cta_button');
             ?>

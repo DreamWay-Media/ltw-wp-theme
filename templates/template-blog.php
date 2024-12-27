@@ -8,9 +8,10 @@ get_header(); ?>
     <h1 class="font-bold text-white">Blog</h1>
 </div>
 
-<main class="container mx-auto py-8 px-2 md:py-8 md:px-16">
-
-    <?php the_content(); ?>
+<main class="wrap py-8">
+    <div class="content gap-5 flex-wrap !justify-around !items-start">
+        <?php the_content(); ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>
