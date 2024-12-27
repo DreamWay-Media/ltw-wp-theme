@@ -27,7 +27,7 @@
                                     <?php echo esc_url($medium_image); ?> 800w, 
                                     <?php echo esc_url($large_image); ?> 1200w, 
                                     <?php echo esc_url($full_image); ?> 1600w"
-                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1600px" 
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1600px"
                                 alt="<?php echo esc_attr($image_alt); ?>"
                                 class="w-full h-auto object-cover"
                                 loading="lazy">
@@ -46,17 +46,19 @@
 
 
                     <!-- Post Navigation -->
-                    <div class="content py-[100px] flex flex-col justify-center items-center">
-                        <h5>Keep Reading</h5>
-                        <nav class="post-navigation my-8 flex justify-around items-center w-full">
-                            <div class="prev-post">
-                                <?php previous_post_link('<span class="text-2xl text-primary transition duration-300 hover:text-tertiary">&larr; %link</span>'); ?>
-                            </div>
-                            <div class="next-post">
-                                <?php next_post_link('<span class="text-2xl text-primary transition duration-300 hover:text-tertiary">%link &rarr;</span>'); ?>
-                            </div>
-                        </nav>
-                    </div>
+                    <?php if (previous_post_link() || next_post_link()): ?>
+                        <div class="content py-[100px] flex flex-col justify-center items-center">
+                            <h5>Keep Reading</h5>
+                            <nav class="post-navigation my-8 flex justify-around items-center w-full">
+                                <div class="prev-post">
+                                    <?php previous_post_link('<span class="text-2xl text-primary transition duration-300 hover:text-tertiary">&larr; %link</span>'); ?>
+                                </div>
+                                <div class="next-post">
+                                    <?php next_post_link('<span class="text-2xl text-primary transition duration-300 hover:text-tertiary">%link &rarr;</span>'); ?>
+                                </div>
+                            </nav>
+                        </div>
+                    <?php endif; ?>
                 </article>
         <?php endwhile;
         endif; ?>
