@@ -28,10 +28,10 @@ get_header();
             $hero_cta_button = get_field('hero_cta_button');
             ?>
             <section class="wrap w-full h-full relative">
-                <img class="w-full shrink-0 xl:pl-24" src="<?php echo esc_url($hero_url); ?>" />
-                <div class="hidden xl:content xl:absolute xl:left-0 xl:top-0 xl:min-w-full xl:min-h-full xl:bg-white-to-transparent">
-                    <div>
-                        <div class="flex flex-col items-start gap-6">
+                <img class="max-w-[1440px] shrink-0 xl:pl-24 " src="<?php echo esc_url($hero_url); ?>" />
+                <div class="hidden xl:wrap xl:absolute xl:left-0 xl:top-0 xl:min-w-full xl:min-h-full xl:max-w-[1440px] xl:bg-white-to-transparent">
+                    <div class="content">
+                        <div class="flex flex-col items-start gap-6 max-w-[534px]">
                             <h1 class="max-w-[500px]"><?php echo wp_kses_post($hero_main_message); ?></h1>
                             <p class="max-w-[450px]"><?php echo esc_html($hero_sub_message); ?></p>
                             <a href="#contact-us-form" class="ltw-btn"><?php echo esc_html($hero_cta_button); ?><span class="arrow-right"></span></a>
@@ -48,7 +48,7 @@ get_header();
     </section>
     <!-- Main Content Section -->
     <!-- Testimonials Section -->
-    <section class="overflow-x-hidden">
+    <section class="overflow-x-hidden ">
         <?php
         $testimonials_heading = get_field('testimonials_heading');
         function get_star_rating($rating)
@@ -67,13 +67,13 @@ get_header();
 
         if ($query->have_posts()) :
         ?>
-            <div class="wrap bg-primary text-white">
+            <div class="wrap bg-primary text-white flex-col py-[57px] lg:pt-[111px] lg:pb-[100px]">
                 <h2 class="my-8 self-center"><?php echo esc_html($testimonials_heading); ?></h2>
-                <div class="grid grid-cols-4 grid-rows-[auto_auto] lg:content my-0 mx-auto">
+                <div class="content grid grid-cols-4 grid-rows-[auto_auto] lg:flex">
                     <!-- Left button (Previous) -->
                     <button id="testimonial-left-button" class="testimonial-swiper-button-prev arrow-left-circle row-start-2 col-start-2 col-span-1"></button>
 
-                    <div id="testimonial-swiper-container" class="testimonial-swiper-container row-start-1 col-start-1 col-span-4 w-[65vw] overflow-x-hidden lg:w-[65vw] my-0 mx-auto text-center xl:content">
+                    <div id="testimonial-swiper-container" class="testimonial-swiper-container row-start-1 col-start-1 col-span-4 overflow-x-hidden text-center xl:content">
                         <!-- Swiper Wrapper -->
                         <div id="testimonial-swiper-wrapper" class="swiper-wrapper">
                             <?php
@@ -127,14 +127,14 @@ get_header();
     <!-- Testimonials Section -->
     <!-- Clients Section -->
     <section class="overflow-x-hidden">
-        <div class="wrap">
+        <div class="wrap flex-col pt-[37px] pb-[46px] lg:pt-[70px] lg:pb-[112px]">
             <?php $our_clients_heading = get_field('our_clients_heading'); ?>
             <h2 class="my-8 self-center"><?php echo esc_html($our_clients_heading); ?></h2>
-            <div class="grid grid-cols-4 grid-rows-[auto_auto] lg:content my-0 mx-auto">
+            <div class="content grid grid-cols-4 grid-rows-[auto_auto] lg:flex">
                 <!-- Left button (Previous) -->
                 <button id="client-left-button" class="client-swiper-button-prev arrow-left-circle row-start-2 col-start-2 col-span-1"></button>
 
-                <div id="client-swiper-container" class="client-swiper-container row-start-1 col-start-1 col-span-4 w-[65vw] overflow-x-hidden lg:w-[65vw] my-0 mx-auto text-center xl:content">
+                <div id="client-swiper-container" class="client-swiper-container row-start-1 col-start-1 col-span-4 overflow-x-hidden text-center xl:content text-[35px]">
                     <!-- Swiper Wrapper -->
                     <div id="client-swiper-wrapper" class="swiper-wrapper">
                         <div id="client-swiper-slide" class="swiper-slide transition-transform transform">

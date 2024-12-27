@@ -4,7 +4,7 @@ $image_id = 124;
 $image_url = wp_get_attachment_url($image_id);
 ?>
 <div id="contact-us-form" class="sm:px-16 bg-secondary min-h-[500px] flex flex-col justify-start items-center bg-no-repeat bg-right-bottom" style="background-image:url(<?php echo esc_url($image_url); ?>);">
-    <section class="w-full max-w-4xl">
+    <section class="w-full max-w-4xl pt-[70px] pb-[87px] lg:py-[84px]">
         <h2 class="mx-auto text-center my-8">Get a Schedule</h2>
         <!-- Embed Contact Form -->
         <div>

@@ -19,12 +19,13 @@
 
 /* css for placeholder */
 .form-placeholder {
-    @apply placeholder:text-primary placeholder:text-[14px] sm:placeholder:text-[16px];
+    @apply placeholder:text-primary placeholder:text-[16px] placeholder:leading-[28.7px] placeholder:not-italic placeholder:font-normal;
 }
 
 /* css for form inputs */
 .form-input-reg {
-    @apply h-14 bg-white shadow-lg border p-2 rounded-md w-full;
+    scrollbar-width:none;
+    @apply h-14 bg-white border border-[#C9C9C9] py-[13px] px-[16px] rounded-md w-full;
 }
 
 /* css that targets message section */

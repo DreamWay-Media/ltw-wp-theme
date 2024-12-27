@@ -43,8 +43,8 @@ function blog($post_id = null, $title = "Title", $uploadDate = null, $author = "
                     <div class="h-64 bg-gray-200 relative overflow-hidden">
                         <img 
                             src="' . esc_url($src) . '" 
-                            srcset="' . esc_url($srcset) . '" 
-                            alt="' . esc_html($alt) . '" 
+                            srcset="' . esc_attr($srcset) . '" 
+                            alt="' . esc_attr($alt) . '" 
                             class="inset-0 w-full h-full object-cover" />
                     </div>
                 </a>

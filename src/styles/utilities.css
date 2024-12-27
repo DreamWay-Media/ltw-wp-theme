@@ -457,6 +457,7 @@ div .swiper-rtl .swiper-button-next:after {
 #client-swiper-slide {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #client-left-button,

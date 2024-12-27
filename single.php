@@ -5,11 +5,11 @@
     <h1><?php the_title(); ?></h1>
 </div>
 
-<div class="container mx-auto px-16 py-8">
+<div class="mx-auto px-16 py-8">
     <!-- Main Content Area -->
-    <main class="w-full p-4">
+    <main class="wrap p-4">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <article class="single-post-content mb-8">
+                <article class="single-post-content content mb-8">
                     <!-- Post Thumbnail (if available) -->
                     <?php if (has_post_thumbnail()) :
                         $featured_image_id = get_post_thumbnail_id();
@@ -46,7 +46,7 @@
 
 
                     <!-- Post Navigation -->
-                    <div class="flex flex-col justify-center items-center">
+                    <div class="content py-[100px] flex flex-col justify-center items-center">
                         <h5>Keep Reading</h5>
                         <nav class="post-navigation my-8 flex justify-around items-center w-full">
                             <div class="prev-post">
