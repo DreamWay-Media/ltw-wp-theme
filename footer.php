@@ -136,7 +136,7 @@ $image_url = wp_get_attachment_url($image_id);
                 slidesPerView: 2,
             },
             1024: {
-                slidesPerView: 4,
+                slidesPerView: 3,
             },
         },
     });
