@@ -115,6 +115,26 @@ function top_bar_widgets_init() {
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
+    // Register the Left Top Bar (row) widget area
+    register_sidebar( array(
+        'name'          => __( 'Copyright Notice', 'DWM-Skeleton-Theme' ),
+        'id'            => 'copyright-section',
+        'description'   => __( 'Widgets in this area will be shown on the bottom-left side of the footer.', 'DWM-Skeleton-Theme' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    // Register the Left Top Bar (row) widget area
+    register_sidebar( array(
+        'name'          => __( 'Policy Links', 'DWM-Skeleton-Theme' ),
+        'id'            => 'policy-links',
+        'description'   => __( 'Widgets in this area will be shown on the bottom-right side of the footer.', 'DWM-Skeleton-Theme' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 add_action( 'widgets_init', 'top_bar_widgets_init' );
 

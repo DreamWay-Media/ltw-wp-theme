@@ -5,9 +5,9 @@
     <h1><?php the_title(); ?></h1>
 </div>
 
-<div class="mx-auto px-16 py-8">
+<main class="mx-auto px-16 py-8">
     <!-- Main Content Area -->
-    <main class="wrap p-4">
+    <div class="wrap p-4 flex-col">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article class="single-post-content content mb-8">
                     <!-- Post Thumbnail (if available) -->
@@ -35,34 +35,47 @@
                     <?php endif; ?>
 
                     <aside>
-                        <p class="text-xs">Published on <?php echo get_the_date(); ?> by <?php echo get_the_author(); ?></p>
-                        <br></br>
+                        <p class="text-xs">
+                            Published on <?php echo esc_html(get_the_date()); ?>
+                            by <?php echo esc_html(get_the_author()); ?>
+                        </p>
                     </aside>
 
                     <!-- Post Content -->
                     <div class="content">
                         <?php the_content(); ?>
                     </div>
-
-
-                    <!-- Post Navigation -->
-                    <?php if (previous_post_link() || next_post_link()): ?>
-                        <div class="content py-[100px] flex flex-col justify-center items-center">
-                            <h5>Keep Reading</h5>
-                            <nav class="post-navigation my-8 flex justify-around items-center w-full">
-                                <div class="prev-post">
-                                    <?php previous_post_link('<span class="text-2xl text-primary transition duration-300 hover:text-tertiary">&larr; %link</span>'); ?>
-                                </div>
-                                <div class="next-post">
-                                    <?php next_post_link('<span class="text-2xl text-primary transition duration-300 hover:text-tertiary">%link &rarr;</span>'); ?>
-                                </div>
-                            </nav>
-                        </div>
-                    <?php endif; ?>
                 </article>
+
+                <!-- Post Navigation -->
+                <?php
+                $previous = get_previous_post();
+                $next = get_next_post();
+                if ($previous || $next) : ?>
+                    <aside class="content py-[100px] flex flex-col justify-center items-center">
+                        <h5>Keep Reading</h5>
+                        <nav class="post-navigation my-8 flex justify-around items-center w-full">
+                            <?php if ($previous) : ?>
+                                <div class="prev-post">
+                                    <a href="<?php echo get_permalink($previous->ID); ?>" class="text-[22px] font-bold flex justify-center items-center hover:text-tertiary transition duration-300">
+                                        &laquo; <?php echo get_the_title($previous->ID); ?>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($next) : ?>
+                                <div class="next-post">
+                                    <a href="<?php echo get_permalink($next->ID); ?>" class="text-[22px] font-bold flex justify-center items-center hover:text-tertiary transition duration-300">
+                                        <?php echo get_the_title($next->ID); ?> &raquo;
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        </nav>
+                    </aside>
+                <?php endif; ?>
         <?php endwhile;
         endif; ?>
-    </main>
-</div>
+    </div>
+</main>
+
 
 <?php get_footer(); ?>

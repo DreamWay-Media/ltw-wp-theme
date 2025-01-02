@@ -1,98 +1,101 @@
 @tailwind utilities;
 
+/* test */
 
+.Instagram, .left-circle-black, .left-circle, .LinkedIn, .phone, .right-circle-black, 
+.right-circle, .right-angle, .pointer, .star, .star-outline, .user, .calendar-form, 
+.envelope, .Facebook, .right-arrow, .mail-form, .message-form, .phone-form, .X, .city-of-hope,
+.tx-one, .docusign, .macy {
+    font-family: "icomoon";
+}
 
-.user,
-.arrow-right-thick,
-.calender,
-.phone,
-.mail,
-.calender-outline,
-.arrow-right,
-.phone-outline,
-.messages,
-.instagram,
-.linkedin,
-.x,
-.youtube,
-.arrow-right-circle,
-.arrow-left-circle,
-.city-of-hope,
-.tx-one,
-.docusign,
-.macy {
-    font-family: 'icomoon';
+.Instagram:before {
+    content: "\e900";
+}
+
+.left-circle-black:before {
+    content: "\e901";
+}
+
+.left-circle:before {
+    content: "\e902";
+}
+
+.LinkedIn:before {
+    content: "\e903";
+}
+
+.phone:before {
+    content: "\e904";
+}
+
+.right-circle-black:before {
+    content: "\e905";
+}
+
+.right-circle:before {
+    content: "\e906";
+}
+
+.right-angle:before {
+    content: "\e907";
+}
+
+.pointer:before {
+    content: "\e908";
+}
+
+.star {
+    font-size: 20px;
+}
+
+.star:before {
+    content: "\e909";
+}
+
+.star-outline:before {
+    content: "\e90a";
+}
+
+.user:before {
+    content: "\e90b";
+}
+
+.calendar-form:before {
+    content: "\e90c";
+}
+
+.envelope:before {
+    content: "\e90d";
+}
+
+.Facebook:before {
+    content: "\e90e";
+}
+
+.right-arrow:before {
+    content: "\e91e";
+}
+
+.mail-form:before {
+    content: "\e91f";
+}
+
+.message-form:before {
+    content: "\e920";
+}
+
+.phone-form:before {
+    content: "\e921";
+}
+
+.X:before {
+    content: "\e922";
 }
 
 
+/* test */
 
-.user::before {
-    content: '\e900';
-}
-
-.arrow-right-thick::before {
-    content: '\e901';
-}
-
-.calender::before {
-    content: '\e902';
-}
-
-.phone::before {
-    content: '\e903';
-}
-
-.mail::before {
-    content: '\e904';
-}
-
-.calender-outline::before {
-    content: '\e905';
-}
-
-.arrow-right::before {
-    content: '\e906';
-}
-
-.phone-outline::before {
-    content: '\e907';
-}
-
-.messages::before {
-    content: '\e908';
-}
-
-.instagram::before {
-    content: '\e909';
-    transition: all 0.3s linear;
-}
-
-
-.linkedin::before {
-    content: '\e90a';
-    transition: all 0.3s linear;
-}
-
-
-.x::before {
-    content: '\e90b';
-    transition: all 0.3s linear;
-}
-
-
-.youtube::before {
-    content: '\e90c';
-    transition: all 0.3s linear;
-}
-
-
-.arrow-right-circle::before {
-    content: '\e90d';
-}
-
-.arrow-left-circle::before {
-    content: '\e90e';
-}
 
 .city-of-hope .path1::before {
     content: "\e90f";

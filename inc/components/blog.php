@@ -37,8 +37,8 @@ function blog($post_id = null, $title = "Title", $uploadDate = null, $author = "
     }
 
     return '
-        <div class="flex justify-center items-center px-6 bg-white' . esc_attr($custom_classes) . '">
-            <div class="w-96 bg-white"> 
+        <div class="flex justify-center items-center bg-white' . esc_attr($custom_classes) . '">
+            <div class="max-w-[366px] bg-white"> 
                 <a href="' . esc_url($href) . '">
                     <div class="h-64 bg-gray-200 relative overflow-hidden">
                         <img 
@@ -48,18 +48,18 @@ function blog($post_id = null, $title = "Title", $uploadDate = null, $author = "
                             class="inset-0 w-full h-full object-cover" />
                     </div>
                 </a>
-                <div class="p-4">
-                    <h2 class="text-xl font-normal text-gray-800 mb-2">' . esc_html($title) . '</h2>
-                    <div class="flex justify-between text-gray-600 mb-2">
+                <div class="pt-[24px] px-[30px] pb-[25px] text-[14px]">
+                    <h2 class="font-[700] text-[22px] leading-[30px] text-gray-800 font-[Merriweather] pb-[20px]">' . esc_html($title) . '</h2>
+                    <div class="w-full inline-flex items-start text-gray-600 gap-[18px] pb-[15px]">
                         <div class="flex justify-center items-center">
-                            <span class="calender-outline"></span> <p>' . esc_html($uploadDate) . '</p>
+                            <span class="calendar-form text-[14px]"></span> <p class="text-[14px]">' . esc_html($uploadDate) . '</p>
                         </div>
-                        <div class="flex justify-center items-center break-words">
-                            <span class="user"></span> <p class="text-right">' . esc_html($author) . '</p>
+                        <div class="flex justify-center items-center break-words text-[14px]">
+                            <span class="user text-[14px]"></span> <p class="text-right text-[14px]">' . esc_html($author) . '</p>
                         </div>
                     </div>
-                    <p class="mb-2 overflow-hidden max-h-[72px] leading-[20px] line-clamp-3">' . esc_html($desc) . '</p>
-                    <a href="' . esc_url($href) . '" class="text-black font-bold hover:text-tertiary transition duration-300" role="button">Read More <span class="text-2xl">»</span></a>
+                    <p class="mb-2 overflow-hidden max-h-[72px] leading-[20px] line-clamp-3 pb-[10px] text-[14px]">' . esc_html($desc) . '</p>
+                    <a href="' . esc_url($href) . '" class="text-black text-[14px] font-bold hover:text-tertiary transition duration-300" role="button">Read More <span class="right-angle text-[14px]"></span></a>
                 </div>
             </div> 
         </div>

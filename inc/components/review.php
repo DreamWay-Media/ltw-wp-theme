@@ -16,15 +16,15 @@ function review( $rating=5, $desc="We hired Larry, and the rest is history! Than
     // Ensure the rating is an integer within the range [1-5]
     $rounded = max(1, min(5, round($rating)));
     // Repeat the number of ratings to get the number of ★'s
-    $result = str_repeat("★", $rounded);
+    $result = str_repeat('<span class="star"></span>', $rounded);
     // Add empty stars if you want to display a total of 5 stars
-    $result .= str_repeat("☆", 5 - $rounded);
+    $result .= str_repeat('<span class="star-outline"></span>', 5 - $rounded);
 
     return '
-        <div class="bg-white overflow-hidden flex flex-col justify-center items-stretch border border-primary gap-[24px] p-[32px] ' . htmlspecialchars($custom_classes) . '">
+        <div class="bg-white overflow-hidden flex flex-col justify-between items-stretch border border-primary gap-[24px] p-[32px] ' . htmlspecialchars($custom_classes) . '">
             <!-- Star Rating Section -->
             <div>
-                <span class="text-black-500 text-[32px]">' . $result . '</span>
+                <span class="text-black-500 text-[32px] flex gap-1">' . $result . '</span>
             </div>
             <!-- Testimonial Section -->
             <div class="text-[18px] leading-[28px] not-italic font-normal"> 

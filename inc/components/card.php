@@ -35,10 +35,10 @@ function card($post_id=null, $href="/", $intro="Intro text", $title="Title", $de
                         class="inset-0 w-full h-full object-cover" role="img" />
                 </div>
             </a>
-            <div class="p-1">
-                <p class="text-gray-600 mb-1 py-3">'.htmlspecialchars($intro).'</p>
-                <a href="'.htmlspecialchars($href).'"><h6 class="font-light text-gray-800 mb-2">'.htmlspecialchars($title).'</h6></a>
-                <p class="text-gray-700">'.htmlspecialchars($desc).'</p>
+            <div class="flex flex-col gap-4 py-4 justify-evenly items-start">
+                <p class="text-black mb-1 py-3">'.htmlspecialchars($intro).'</p>
+                <a href="'.htmlspecialchars($href).'"><h6 class="font-normal text-[23px] text-gray-800">'.htmlspecialchars($title).'</h6></a>
+                <p class="text-[#666]">'.htmlspecialchars($desc).'</p>
             </div>
         </div>
     ';

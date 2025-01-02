@@ -34,7 +34,7 @@ get_header();
                         <div class="flex flex-col items-start gap-6 max-w-[534px]">
                             <h1 class="max-w-[500px]"><?php echo wp_kses_post($hero_main_message); ?></h1>
                             <p class="max-w-[450px]"><?php echo esc_html($hero_sub_message); ?></p>
-                            <a href="#contact-us-form" class="ltw-btn"><?php echo esc_html($hero_cta_button); ?><span class="arrow-right"></span></a>
+                            <a href="#contact-us-form" class="ltw-btn"><?php echo esc_html($hero_cta_button); ?><span class="right-arrow"></span></a>
                         </div>
                     </div>
                 </div>
@@ -53,8 +53,8 @@ get_header();
         $testimonials_heading = get_field('testimonials_heading');
         function get_star_rating($rating)
         {
-            $stars = str_repeat("★", $rating);
-            $stars .= str_repeat("☆", 5 - $rating);
+            $stars = str_repeat('<span class="star"></span>', $rating);
+            $stars .= str_repeat('<span class="star-outline"></span>', 5 - $rating);
             return $stars;
         }
         ?>
@@ -71,7 +71,7 @@ get_header();
                 <h2 class="my-8 self-center"><?php echo esc_html($testimonials_heading); ?></h2>
                 <div class="content grid grid-cols-4 grid-rows-[auto_auto] lg:flex">
                     <!-- Left button (Previous) -->
-                    <button id="testimonial-left-button" class="testimonial-swiper-button-prev arrow-left-circle row-start-2 col-start-2 col-span-1"></button>
+                    <button id="testimonial-left-button" class="testimonial-swiper-button-prev left-circle row-start-2 col-start-2 col-span-1"></button>
 
                     <div id="testimonial-swiper-container" class="testimonial-swiper-container row-start-1 col-start-1 col-span-4 overflow-x-hidden text-center xl:content">
                         <!-- Swiper Wrapper -->
@@ -93,15 +93,15 @@ get_header();
                                 }
                             ?>
                                 <div id="testimonial-swiper-slide" class="swiper-slide transition-transform transform">
-                                    <div>
+                                    <div class="flex flex-col justify-center items-center gap-[32px]">
                                         <div class="mb-2">
-                                            <span class="text-[32px]"><?php echo get_star_rating($client_rating); ?></span>
+                                            <span class="flex justify-center items-center text-[32px] gap-1"><?php echo get_star_rating($client_rating); ?></span>
                                         </div>
-                                        <p class="leading-7"><?php echo esc_html($client_review); ?></p>
+                                        <p class="max-w-[862px] leading-7"><?php echo esc_html($client_review); ?></p>
                                         <div class="flex justify-center items-center mt-4">
                                             <img class="w-12 h-12 rounded-full mr-4" src="<?php echo esc_html($image_url); ?>" alt="<?php echo esc_html($image_alt); ?>" role="img">
                                             <div class="flex flex-col items-start">
-                                                <p class="font-semibold"><?php echo esc_html($client_name); ?></p>
+                                                <p class="text-[19px] leading-[30px]"><?php echo esc_html($client_name); ?></p>
                                                 <p><?php echo esc_html($client_company_name); ?></p>
                                             </div>
                                         </div>
@@ -113,10 +113,10 @@ get_header();
                         <!-- Swiper Wrapper -->
                     </div>
                     <!-- Right button (Next) -->
-                    <button id="testimonial-right-button" class="testimonial-swiper-button-next arrow-right-circle row-start-2 row-span-1 col-start-3 col-span-1"></button>
+                    <button id="testimonial-right-button" class="testimonial-swiper-button-next right-circle row-start-2 row-span-1 col-start-3 col-span-1"></button>
                 </div>
                 <?php $testimonials_cta_button = get_field('testimonials_cta_button'); ?>
-                <a href="/testimonials" class="self-center ltw-btn-light justify-center items-center my-8"><?php echo esc_html($testimonials_cta_button); ?><span class="arrow-right"></span></a>
+                <a href="/testimonials" class="self-center ltw-btn-light justify-center items-center my-8"><?php echo esc_html($testimonials_cta_button); ?><span class="right-arrow"></span></a>
             </div>
         <?php
         else :
@@ -132,7 +132,7 @@ get_header();
             <h2 class="my-8 self-center"><?php echo esc_html($our_clients_heading); ?></h2>
             <div class="content grid grid-cols-4 grid-rows-[auto_auto] lg:flex">
                 <!-- Left button (Previous) -->
-                <button id="client-left-button" class="client-swiper-button-prev arrow-left-circle row-start-2 col-start-2 col-span-1"></button>
+                <button id="client-left-button" class="client-swiper-button-prev left-circle-black row-start-2 col-start-2 col-span-1"></button>
 
                 <div id="client-swiper-container" class="client-swiper-container row-start-1 col-start-1 col-span-4 overflow-x-hidden text-center xl:content text-[35px]">
                     <!-- Swiper Wrapper -->
@@ -153,7 +153,7 @@ get_header();
                     <!-- Swiper Wrapper -->
                 </div>
                 <!-- Right button (Next) -->
-                <button id="client-right-button" class="client-swiper-button-next arrow-right-circle row-start-2 row-span-1 col-start-3 col-span-1"></button>
+                <button id="client-right-button" class="client-swiper-button-next right-circle-black row-start-2 row-span-1 col-start-3 col-span-1"></button>
             </div>
         </div>
     </section>
