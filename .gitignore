@@ -1,6 +1,4 @@
 node_modules/
-dist/
-.DS_Store
 
-# VS Code Local History extension
+.DS_Store
 .history/
