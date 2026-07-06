@@ -67,14 +67,16 @@
                 <!-- logo -->
                 <div class="hidden lg:flex lg:items-center lg:h-[68px] flex-1">
                     <!-- navigation -->
-                    <nav class="w-full flex justify-center items-center">
+                    <nav id="primary-navigation" class="w-full flex justify-center items-center">
                         <?php
                         // Check if there is a primary menu assigned
                         if (has_nav_menu('primary')) {
                             // Desktop Menu
                             wp_nav_menu(array(
                                 'theme_location' => 'primary',
-                                'menu_class' => 'inline-flex items-start lg:gap-[35px] xl:gap-[52px]' // CSS for nav menu
+                                'container' => false,
+                                'menu_class' => 'primary-menu inline-flex items-start lg:gap-[35px] xl:gap-[52px]', // CSS for nav menu
+                                'walker' => new LTW_Primary_Nav_Walker(),
                             ));
                         } else {
                             // Fallback Menu for Desktop
@@ -100,12 +102,15 @@
 
                     <div class="bg-[rgba(68,68,68,0.95)] overlay">
                         <nav id="nav-menu" class="absolute w-full left-0 top-full hidden transition-all duration-300">
-                            <ul class="flex flex-col p-4">
-                                <?php
-                                // Mobile Menu
-                                wp_nav_menu(array('theme_location' => 'primary'));
-                                ?>
-                            </ul>
+                            <?php
+                            // Mobile Menu
+                            wp_nav_menu(array(
+                                'theme_location' => 'primary',
+                                'container' => false,
+                                'menu_class' => 'primary-menu flex flex-col p-4',
+                                'walker' => new LTW_Primary_Nav_Walker(),
+                            ));
+                            ?>
                         </nav>
                         <!-- navigation -->
                     </div>

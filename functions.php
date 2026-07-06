@@ -23,6 +23,21 @@ function skeleton_theme_setup() {
 }
 add_action('after_setup_theme', 'skeleton_theme_setup');
 
+/**
+ * Walker for the primary menu that adds an accessible toggle button
+ * next to any menu item that has a submenu, so submenus can be opened
+ * via hover (desktop) or tap/keyboard (touch + accessibility).
+ */
+class LTW_Primary_Nav_Walker extends Walker_Nav_Menu {
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+        parent::start_el($output, $item, $depth, $args, $id);
+
+        if (in_array('menu-item-has-children', $item->classes, true)) {
+            $output .= '<button type="button" class="sub-menu-toggle" aria-expanded="false"><span class="sub-menu-toggle-icon" aria-hidden="true"></span><span class="screen-reader-text">Toggle submenu</span></button>';
+        }
+    }
+}
+
 // Register Custom Widget
 function my_custom_widget() {
     register_widget('My_Custom_Widget');
@@ -154,7 +169,10 @@ function skeleton_enqueue_assets() {
     // Enqueue theme's main stylesheet 
     wp_enqueue_style('my-theme-style', get_stylesheet_uri(), array('tailwindcss', 'swiper-css'), null);
 
-    // Enqueue Swiper JS 
+    // Enqueue Swiper JS
     wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
+
+    // Enqueue primary navigation submenu behaviour
+    wp_enqueue_script('ltw-navigation', get_template_directory_uri() . '/src/js/navigation.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'skeleton_enqueue_assets');
