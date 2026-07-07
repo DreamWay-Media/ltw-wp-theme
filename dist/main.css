@@ -1434,6 +1434,17 @@ div .swiper-rtl .swiper-button-next:after {
   position: relative;
 }
 
+/* .sub-menu itself needs no reset here: Tailwind's Preflight already
+     zeroes out ul/ol list-style, margin and padding globally. Any bare
+     `.sub-menu` / `.sub-menu a` rule placed in this shared section gets
+     silently purged from the production build, because "sub-menu" never
+     appears as literal text in this theme's PHP/JS (WordPress core's nav
+     walker generates that class at runtime) — Tailwind's content scanner
+     only keeps @layer rules whose class text is found in scanned files.
+     That's why `.sub-menu a { display: block }` must live on the
+     ID-qualified #primary-navigation / #nav-menu rules below instead,
+     since "primary-navigation" and "nav-menu" are literal IDs in header.php. */
+
 .sub-menu-toggle {
   display: inline-flex;
   align-items: center;
@@ -1497,12 +1508,32 @@ div .swiper-rtl .swiper-button-next:after {
     z-index: 40;
   }
 
+  /* Invisible bridge so the pointer never leaves a hoverable element
+       while crossing the gap between the trigger and the dropdown. */
+
+  #primary-navigation .sub-menu::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 0;
+    right: 0;
+    height: 14px;
+  }
+
   /* nested (grandchild) menus flyout to the side instead of stacking below */
 
   #primary-navigation .sub-menu .sub-menu {
     top: -8px;
     left: 100%;
     transform: translate(8px, 8px);
+  }
+
+  #primary-navigation .sub-menu .sub-menu::before {
+    top: 0;
+    left: -8px;
+    right: auto;
+    width: 8px;
+    height: 100%;
   }
 
   #primary-navigation .menu-item-has-children:hover > .sub-menu,
@@ -1525,6 +1556,7 @@ div .swiper-rtl .swiper-button-next:after {
   }
 
   #primary-navigation .sub-menu a {
+    display: block;
     padding: 10px 16px;
     border-radius: 6px;
     font-size: 15px;
@@ -1562,6 +1594,7 @@ div .swiper-rtl .swiper-button-next:after {
   }
 
   #nav-menu .sub-menu a {
+    display: block;
     padding: 10px 0;
     font-size: 24px;
   }
